@@ -10,7 +10,24 @@
 -useRef Hook
 -firebase setup
 -deploying app to production
--create user in app
+-create sign up in user account
+-implement sign in user api
+-created Redux store with userslice
+-implemented sign out
+-update profile
+-Fetch movies from TMDB
+-BugFix: sign up user displayName and Profile picture update
+-BugFix: If user is not logged in redirect/browse to login page and vice versa
+-unsubscribe to the onAuthStateChange Callback
+-Add hardcoded values to the constant file
+-Get Data from TMDB Api
+-Custom hook for now playing hooks
+-create movieslice
+-planning for maincontainer
+-fetch data for trailer video
+-update store with trailer video data
+-embeded the youtube video and make it autoplay and mut
+-tailwind classes
 
 
 # Features

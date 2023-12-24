@@ -6,6 +6,7 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { USER_AVATAR } from '../utils/constants';
 
 
 const Login = () => {
@@ -33,13 +34,13 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value, 
-            photoURL: "https://media.licdn.com/dms/image/C4E03AQEHA3_U8mRZoA/profile-displayphoto-shrink_400_400/0/1616814077642?e=1709164800&v=beta&t=NouOaI9xNZLZXNS1JBlDqaX_zuENk-B017W_AcQxw1g"
+            photoURL: USER_AVATAR
           }).then(() => {
             // Profile updated!
             const {uid, email, displayName, photoURL} = auth.currentUser;
           dispatch(addUser({uid: uid, emai: email, dispalyName: displayName, photoURL: photoURL}));
             // ...
-            navigate("/browse");
+            
           }).catch((error) => {
             // An error occurred
             // ...
@@ -62,8 +63,7 @@ const Login = () => {
           .then((userCredential) => {
     // Signed in 
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          
     // ...
           })
           .catch((error) => {
