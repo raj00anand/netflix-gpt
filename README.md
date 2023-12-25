@@ -26,8 +26,15 @@
 -planning for maincontainer
 -fetch data for trailer video
 -update store with trailer video data
--embeded the youtube video and make it autoplay and mut
+-embeded the youtube video and make it autoplay and mute
 -tailwind classes
+-Secondary component
+-build movie list
+-build movie card
+-found out image cdn (TBDB)
+-make browse page look better using tailwind
+-fetch popular, top rated, upcoming movies from tmdb
+-added animation on moviecard
 
 
 # Features

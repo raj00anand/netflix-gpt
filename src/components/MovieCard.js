@@ -5,7 +5,7 @@ const MovieCard = ({posterPath}) => {
     // console.log(posterPath)
   return (
     <div className='w-40 pr-2'>
-      <img src={IMG_CDN + posterPath} alt='movie card'/>
+      <img className='w-[220px] p-1 rounded-lg inline-block hover:scale-125 ease-in-out duration-100 hover:rounded-lg' src={IMG_CDN + posterPath} alt='movie card'/>
     </div>
   )
 }
