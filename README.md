@@ -1,58 +1,62 @@
 # Netflix GPT
 
--Create React App
--Configured TailwindCSS
--Header
--Routing
--Login Form
--Sign up Form
--Form Validation
--useRef Hook
--firebase setup
--deploying app to production
--create sign up in user account
--implement sign in user api
--created Redux store with userslice
--implemented sign out
--update profile
--Fetch movies from TMDB
--BugFix: sign up user displayName and Profile picture update
--BugFix: If user is not logged in redirect/browse to login page and vice versa
--unsubscribe to the onAuthStateChange Callback
--Add hardcoded values to the constant file
--Get Data from TMDB Api
--Custom hook for now playing hooks
--create movieslice
--planning for maincontainer
--fetch data for trailer video
--update store with trailer video data
--embeded the youtube video and make it autoplay and mute
--tailwind classes
--Secondary component
--build movie list
--build movie card
--found out image cdn (TBDB)
--make browse page look better using tailwind
--fetch popular, top rated, upcoming movies from tmdb
--added animation on moviecard
+- Create React App
+- Configured TailwindCSS
+- Header
+- Routing
+- Login Form
+- Sign up Form
+- Form Validation
+- useRef Hook
+- firebase setup
+- deploying app to production
+- create sign up in user account
+- implement sign in user api
+- created Redux store with userslice
+- implemented sign out
+- update profile
+- Fetch movies from TMDB
+- BugFix: sign up user displayName and Profile picture update
+- BugFix: If user is not logged in redirect/browse to login page and vice versa
+- unsubscribe to the onAuthStateChange Callback
+- Add hardcoded values to the constant file
+- Get Data from TMDB Api
+- Custom hook for now playing hooks
+- create movieslice
+- planning for maincontainer
+- fetch data for trailer video
+- update store with trailer video data
+- embeded the youtube video and make it autoplay and mute
+- tailwind classes
+- Secondary component
+- build movie list
+- build movie card
+- found out image cdn (TBDB)
+- make browse page look better using tailwind
+- use custom hooks
+- fetch popular, top rated, upcoming movies from tmdb
+- added animation on moviecard
+- GPT search header
+- GPT search Bar
+- Added Multi-language Feature in our App
 
 
 # Features
--Login/Sign Up
+- Login/Sign Up
     - Sign In/Sign up form
-    -redirect to Browse Page
--Browse (after authentication)
-    -Header
-    -Main Movie
+    - redirect to Browse Page
+- Browse (after authentication)
+    - Header
+    - Main Movie
 
-        -Trailer in Background
-        -Title & Description
-        -MovieSuggestions
+        - Trailer in Background
+        - Title & Description
+        - MovieSuggestions
             -MovieList * N
         
--NetflixGPT
-    -Search Bar
-    -Movie Suggestions
+- NetflixGPT
+    - Search Bar
+    - Movie Suggestions
 
 
 
