@@ -39,6 +39,9 @@
 - GPT search header
 - GPT search Bar
 - Added Multi-language Feature in our App
+- GPT API integration
+- understand Promise.All
+- show GPT movie result
 
 
 # Features

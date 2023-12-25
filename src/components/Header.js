@@ -66,8 +66,8 @@ const Header = () => {
     </div>
     {user && (<div className='flex p-2 m-1 '>
       {showGptSearch && <select className='p-2 rounded-lg mr-1 bg-gray-900 text-white' onChange={handleLanguageChange}>
-        {SUPPORTED_LANGUAGES.map((lang) => (
-          <option value={lang.identifier}>{lang.name}</option>
+        {SUPPORTED_LANGUAGES.map((lang, index) => (
+          <option key={index} value={lang.identifier}>{lang.name}</option>
         ))}
        
       </select>}
