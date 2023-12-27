@@ -42,6 +42,11 @@
 - GPT API integration
 - understand Promise.All
 - show GPT movie result
+- created gptslice added data
+- created .env file
+- Reused Movies List component to make movie suggestion container
+- memoization
+- made App resposive
 
 
 # Features
