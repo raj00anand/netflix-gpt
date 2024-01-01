@@ -4,10 +4,10 @@ import ScrollMenu from 'react-horizontal-scroll-menu';
 
 
 
-const Arrow = ({ text, className }) => {
+const Arrow = ({ text }) => {
   return (
     <div
-      className='bg-gray-300 py-2 px-1 rounded-sm font-bold text-lg h-10 w-6 absolute z-10 '
+      className='bg-black bg-opacity-70 pt-8  px-1 -mx-2 -mt-12 rounded-lg hover:rounded-lg font-bold  text-white hover:bg-opacity-90 text-2xl h-28 w-8 text-center absolute z-10 '
     >{text}</div>
   );
 };
@@ -19,7 +19,7 @@ const ArrowRight = Arrow({ text: '>' });
 const MovieList = ({title, movies}) => {
 
   
-  const moviesList = movies?.map((movie) => <MovieCard key={movie.id} posterPath={movie?.poster_path}/>);
+  const moviesList = movies?.map((movie) => <MovieCard key={movie.id} posterPath={movie?.poster_path} moviesTitle={movie?.title}/>);
 
    
   return (
