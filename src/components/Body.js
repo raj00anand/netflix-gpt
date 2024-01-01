@@ -17,11 +17,13 @@ const Body = () => {
         {
             path: '/browse',
             element: <Browse/>,
+            
         },
         {
-          path: '/movie/:moviesId',
-          element: <MoviePlay/>
+            path: '/browse/movie/:moviesId',
+            element: <MoviePlay/>
         }
+        
         
     ])
 

@@ -19,7 +19,7 @@ const ArrowRight = Arrow({ text: '>' });
 const MovieList = ({title, movies}) => {
 
   
-  const moviesList = movies?.map((movie) => <MovieCard key={movie.id} posterPath={movie?.poster_path} moviesTitle={movie?.title}/>);
+  const moviesList = movies?.map((movie) => <MovieCard key={movie.id} posterPath={movie?.poster_path} moviesTitle={movie?.title} movieId={movie.id}/>);
 
    
   return (

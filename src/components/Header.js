@@ -35,6 +35,7 @@ const Header = () => {
        dispatch(addUser({uid: uid, emai: email, dispalyName: displayName, photoURL: photoURL}));
          // ...
          navigate("/browse");
+         
         // ...
       } else {
         // User is signed out
