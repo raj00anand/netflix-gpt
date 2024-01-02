@@ -15,6 +15,7 @@ const MoviePlay = () => {
     
     const {moviesId} = useParams();
     const [video, setVideo] = useState(null);
+    const [movie, setMovie] = useState(null);
 
     useEffect(() => {
         
@@ -37,17 +38,19 @@ const MoviePlay = () => {
 
     useEffect(() => {
         getMovieVideos();
+        getMovieById();
         
     },[])
     
-    
-    const trailerVideo = useSelector(store => store.movies?.trailerVideo);
-    const movies = useSelector(store => store.movies);
 
-    const allMovies = [...movies.nowPlayingMovies, ...movies.popularMovies, ...movies.TopRatedMovies, ...movies.upComingMovies]
-   
-    const movieById = allMovies.find((movie) => movie.id == moviesId);
-    
+    const getMovieById = async () => {
+        const data = await fetch("https://api.themoviedb.org/3/movie/"+moviesId+"language=en-US", API_OPTIONS)
+        const json = await data.json();
+        
+        
+        setMovie(json)
+      
+      }
     
     const getMovieVideos = async () => {
         const data = await fetch("https://api.themoviedb.org/3/movie/"+moviesId+"/videos?language=en-US", API_OPTIONS)
@@ -65,11 +68,11 @@ const MoviePlay = () => {
   return (
     <div className='h-screen w-full  bg-black'>
         <div >
-            <iframe className='w-full h-[400px] md:h-[600px] p-1'  src={"https://www.youtube.com/embed/"+video?.key}title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            <iframe className='w-full h-[400px] md:h-[600px] p-1 rounded-lg'  src={"https://www.youtube.com/embed/"+video?.key}title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
         <div className='text-white text-justify m-2 p-2'>
-            <span className='text-lg font-bold '>{movieById.title}</span>
-            <p className='mt-2'><span className='text-lg font-semibold'>Summary : </span>{movieById.overview}</p>
+            <span className='text-lg font-bold '>{movie?.original_title}</span>
+            <p className='mt-2'><span className='text-lg font-semibold'>Summary : </span>{movie?.overview}</p>
         </div>
 
       

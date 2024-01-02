@@ -40,7 +40,7 @@ const GptSearchBar = () => {
           const promiseArray = gptMovies.map(movie => searchMovieTMDB(movie));
 
           const tmdbResult = await Promise.all(promiseArray);
-          console.log(tmdbResult);
+          // console.log(tmdbResult);
           dispatch(addGptMovieResult({movieNames: gptMovies, movieResults: tmdbResult}));
           
     }

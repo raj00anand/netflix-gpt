@@ -8,7 +8,8 @@ import { useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO_URL, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { toggleGptSearchView } from '../utils/GptSlice';
-import { changeLanguage } from '../utils/configSlice';
+import { changeLanguage, changeShowSearch } from '../utils/configSlice';
+
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const Header = () => {
   
   const user = useSelector(store => store.user);
   const showGptSearch = useSelector(store => store.gpt.showGptSearch)
+  const showSearch = useSelector(store => store.config.showSearch); 
+  
   const handleSignOut = () => {
     signOut(auth).then(() => {
       
@@ -60,6 +63,10 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   }
 
+  const handleSearchClick = () => {
+    dispatch(changeShowSearch());
+  }
+
   return (
     <div className='absolute py-2 px-8 bg-gradient-to-b from-black z-10 w-full flex flex-col md:flex-row md:justify-between'>
     <div>
@@ -72,8 +79,9 @@ const Header = () => {
         ))}
        
       </select>}
+      <div onClick={handleSearchClick} className='text-white font-bold text-3xl cursor-pointer mr-1'>{showSearch ? '🏠' : '⌕'}</div>
       <button className='h-10 p-1 rounded-lg bg-purple-400 bg-opacity-90 text-white whitespace-nowrap'
-      onClick={handleGptSearchClick}>{!showGptSearch ? 'GPT Search': 'Home Page'}</button>
+      onClick={handleGptSearchClick}>{(!showGptSearch) ? 'GPT Search': 'Home Page'}</button>
       <img className='ml-1 w-10 h-10 rounded-sm' src={user?.photoURL} alt='user-icon'/>
       <div>
       <button className='text-white font-bold align-middle m-2' onClick={handleSignOut}>SignOut</button>

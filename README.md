@@ -47,6 +47,7 @@
 - Reused Movies List component to make movie suggestion container
 - memoization
 - made App resposive
+- Added moviePlay container
 
 
 # Features

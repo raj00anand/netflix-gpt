@@ -10,21 +10,43 @@ import usePopularMovies from '../hooks/usePopularMovies'
 import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import useUpComingMovies from '../hooks/useUpComingMovies'
 import GptSearch from './GptSearch'
+import SearchContainer from './SearchContainer'
 
 
 const Browse = () => {
   const showGptSearch = useSelector(store => store.gpt.showGptSearch)
+
+  const showSearch = useSelector(store => store.config.showSearch); 
+
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
   useUpComingMovies();
 
+  const renderComponent = () => {
+    if(showGptSearch){
+      return <GptSearch/>;
+    }else if(showSearch){
+      return <SearchContainer/>
+    }else{
+      return (<><MainContainer/>
+      <SecondaryContainer/>
+      </>)
+    }
+  }
+
+
   return (
     <div>
       <Header/>
-      {showGptSearch ? (<GptSearch/>) : (<><MainContainer/>
+      {renderComponent()};
+      {/* {showGptSearch ? (<GptSearch/>) : (<><MainContainer/>
       <SecondaryContainer/>
       </>)}
+
+      {showSearch ? (<SearchContainer/>) : (<><MainContainer/>
+      <SecondaryContainer/>
+      </>)} */}
       
      
     </div>
