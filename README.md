@@ -48,6 +48,9 @@
 - memoization
 - made App resposive
 - Added moviePlay container
+- Added Search container
+- implemented searchslice and added to store
+- completed search funtionality
 
 
 # Features

@@ -79,9 +79,9 @@ const Header = () => {
         ))}
        
       </select>}
-      <div onClick={handleSearchClick} className='text-white font-bold text-3xl cursor-pointer mr-1'>{showSearch ? '🏠' : '⌕'}</div>
-      <button className='h-10 p-1 rounded-lg bg-purple-400 bg-opacity-90 text-white whitespace-nowrap'
-      onClick={handleGptSearchClick}>{(!showGptSearch) ? 'GPT Search': 'Home Page'}</button>
+      {!showGptSearch && <div onClick={handleSearchClick} className='text-white font-bold text-3xl cursor-pointer mr-1'>{showSearch ? '🏠' : '⌕'}</div>}
+      {!showSearch && <button className='h-10 p-1 rounded-lg bg-purple-400 bg-opacity-90 text-white whitespace-nowrap'
+      onClick={handleGptSearchClick}>{!showGptSearch ? 'GPT Search': 'Home Page'}</button>}
       <img className='ml-1 w-10 h-10 rounded-sm' src={user?.photoURL} alt='user-icon'/>
       <div>
       <button className='text-white font-bold align-middle m-2' onClick={handleSignOut}>SignOut</button>
