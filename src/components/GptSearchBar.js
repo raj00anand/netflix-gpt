@@ -11,8 +11,7 @@ const GptSearchBar = () => {
     const dispatch = useDispatch();
     const searchText = useRef(null);
 
-    //search movie in TMDB
-    //https://api.themoviedb.org/3/search/movie?query=phir%20hera%20pheri&include_adult=false&language=en-US&page=1
+    
     const searchMovieTMDB = async (movie) => {
         const data = await fetch("https://api.themoviedb.org/3/search/movie?query="+movie+"&include_adult=false&language=en-US&page=1", API_OPTIONS);
         const json = await data.json();
@@ -32,6 +31,7 @@ const GptSearchBar = () => {
         
           if(!gptResult.choices) {
             // TODO: write error handling
+            return <h1>Error while getting data from gpt</h1>
           }
         //   console.log(gptResult.choices);
 

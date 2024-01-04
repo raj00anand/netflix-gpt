@@ -15,11 +15,11 @@ const SearchContainer = () => {
         
      </div>
      <SearchBar/>
-     <div className='  bg-black p-2 m-2 rounded-lg text-white bg-opacity-90'>
+     {movies && <div className='  bg-black p-2 m-2 rounded-lg text-white bg-opacity-90'>
       <div className='flex flex-wrap m-4 justify-center'>
-        {movies && movies.map((movie, index) =>  <MovieCard key={movie.id} posterPath={movie?.poster_path} moviesTitle={movie?.title} movieId={movie.id}/>)}
+        {movies.map((movie, index) =>  <MovieCard key={movie.id} posterPath={movie?.poster_path} moviesTitle={movie?.title} movieId={movie.id}/>)}
       </div>
-    </div>
+    </div>}
     </div>
   )
 }

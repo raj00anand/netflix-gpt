@@ -51,6 +51,8 @@
 - Added Search container
 - implemented searchslice and added to store
 - completed search funtionality
+- added multilanguage funtionality in whole app
+- added CreditsCard to show the name of actors and crew in movieplay container
 
 
 # Features
