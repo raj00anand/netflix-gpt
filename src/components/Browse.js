@@ -39,14 +39,8 @@ const Browse = () => {
   return (
     <div>
       <Header/>
-      {renderComponent()};
-      {/* {showGptSearch ? (<GptSearch/>) : (<><MainContainer/>
-      <SecondaryContainer/>
-      </>)}
-
-      {showSearch ? (<SearchContainer/>) : (<><MainContainer/>
-      <SecondaryContainer/>
-      </>)} */}
+      {renderComponent()}
+      
       
      
     </div>
